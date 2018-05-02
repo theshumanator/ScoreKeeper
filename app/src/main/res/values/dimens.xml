@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <dimen name="resetBottom">20dp</dimen>
+
+    <dimen name="barTop">16dp</dimen>
+    <dimen name="barWidth">1dp</dimen>
+
+    <dimen name="upperViewTop">10dp</dimen>
+
+    <dimen name="buttonTop">8dp</dimen>
+    <dimen name="buttonOuter">19dp</dimen>
+    <dimen name="buttonInner">24dp</dimen>
+
+    <dimen name="cardTop">10dp</dimen>
+    <dimen name="cardScoreTop">0dp</dimen>
+    <dimen name="cardScoreTextSize">36sp</dimen>
+    <dimen name="cardScorePadding">4dp</dimen>
+
+    <dimen name="yellowCardBottomMargin">16dp</dimen>
+
+    <dimen name="scoreTextSize">56sp</dimen>
+    <dimen name="scorePadding">4dp</dimen>
+
+    <dimen name="teamTextSize">24sp</dimen>
+    <dimen name="teamPadding">4dp</dimen>
+    <dimen name="teamMarginTop">4dp</dimen>
+
+    <dimen name="sidePadding">5dp</dimen>
+
+</resources>

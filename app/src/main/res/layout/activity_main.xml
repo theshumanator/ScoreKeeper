@@ -1,0 +1,281 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/upperViewTop"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/sidePadding"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/teamPadding"
+                android:layout_marginTop="@dimen/teamMarginTop"
+                android:textSize="@dimen/teamTextSize"
+                android:text="@string/homeTeam"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/gray"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/footie"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/scorePadding"
+                    android:id="@+id/team_home_goals"
+                    android:text="@string/zero"
+                    android:textSize="@dimen/scoreTextSize"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/cardTop"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_red_light"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/cardScorePadding"
+                    android:id="@+id/team_home_red_card"
+                    android:text="@string/zero"
+                    android:layout_marginTop="@dimen/cardScoreTop"
+                    android:textSize="@dimen/cardScoreTextSize"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/yellowCardBottomMargin"
+                android:layout_marginTop="@dimen/cardTop"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_orange_light"
+                    android:layout_weight="1"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/cardScorePadding"
+                    android:id="@+id/team_home_yellow_card"
+                    android:text="@string/zero"
+                    android:layout_marginTop="@dimen/cardScoreTop"
+                    android:textSize="@dimen/cardScoreTextSize"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="updateHomeTeamGoal"
+                android:layout_marginTop="@dimen/buttonTop"
+                android:layout_marginLeft="@dimen/buttonOuter"
+                android:layout_marginRight="@dimen/buttonInner"
+                android:text="@string/goal" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/buttonTop"
+                android:layout_marginLeft="@dimen/buttonOuter"
+                android:layout_marginRight="@dimen/buttonInner"
+                android:onClick="updateHomeTeamRedCard"
+                android:text="@string/redCard" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/buttonTop"
+                android:layout_marginLeft="@dimen/buttonOuter"
+                android:layout_marginRight="@dimen/buttonInner"
+                android:onClick="updateHomeTeamYellowCard"
+                android:text="@string/yellowCard" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/barWidth"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/barTop"
+            android:background="@android:color/darker_gray"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingRight="@dimen/sidePadding"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/awayTeam"
+                android:padding="@dimen/teamPadding"
+                android:layout_marginTop="@dimen/teamMarginTop"
+                android:textSize="@dimen/teamTextSize"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/gray"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/scorePadding"
+                    android:id="@+id/team_away_goals"
+                    android:text="@string/zero"
+                    android:textSize="@dimen/scoreTextSize"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="@color/black"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/footie"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/cardTop"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/cardScorePadding"
+                    android:id="@+id/team_away_red_card"
+                    android:text="@string/zero"
+                    android:layout_marginTop="@dimen/cardScoreTop"
+                    android:textSize="@dimen/cardScoreTextSize"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_red_light"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/yellowCardBottomMargin"
+                android:layout_marginTop="@dimen/cardTop"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/cardScorePadding"
+                    android:id="@+id/team_away_yellow_card"
+                    android:text="@string/zero"
+                    android:layout_marginTop="@dimen/cardScoreTop"
+                    android:textSize="@dimen/cardScoreTextSize"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_orange_light"
+                    android:layout_weight="1"
+                    />
+
+            </LinearLayout>
+
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="updateAwayTeamGoal"
+                android:layout_marginTop="@dimen/buttonTop"
+                android:layout_marginRight="@dimen/buttonOuter"
+                android:layout_marginLeft="@dimen/buttonInner"
+                android:text="@string/goal" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/buttonTop"
+                android:layout_marginRight="@dimen/buttonOuter"
+                android:layout_marginLeft="@dimen/buttonInner"
+                android:onClick="updateAwayTeamRedCard"
+                android:text="@string/redCard" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/buttonTop"
+                android:layout_marginRight="@dimen/buttonOuter"
+                android:layout_marginLeft="@dimen/buttonInner"
+                android:onClick="updateHomeAwayYellowCard"
+                android:text="@string/yellowCard" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/resetBottom"
+        android:onClick="resetScore"
+        android:text="@string/reset"
+        />
+
+</RelativeLayout>
